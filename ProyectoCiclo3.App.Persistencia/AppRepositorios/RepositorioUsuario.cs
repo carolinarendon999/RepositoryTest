@@ -10,17 +10,6 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         List<Usuario> usuarios;
         private readonly AppContext _appContext = new AppContext();
  
-    // public RepositorioUsuario()
-    //     {
-    //         usuarios= new List<Usuario>()
-    //         {
-    //             new Usuario{id=1,nombre="Camilo",apellidos= "Olmos",direccion= "Cll 7 # 94-78",telefono= "3132625232"},
-    //             new Usuario{id=2,nombre="Andres",apellidos= "Duran",direccion= "Tv 56A # 74-30",telefono= "3167348452"},
-    //             new Usuario{id=3,nombre="Tatiana",apellidos= "Prieto",direccion= "Cll 168 # 14-55",telefono= "3168528063"}
- 
-    //         };
-    //     }
- 
         public IEnumerable<Usuario> GetAll()
         {
             return _appContext.Usuarios;
@@ -30,7 +19,6 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return _appContext.Usuarios.Find(id);
         }
 
-
         public Usuario Create(Usuario newUsuario)
         {
              var addUsuario = _appContext.Usuarios.Add(newUsuario);
@@ -38,7 +26,6 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return addUsuario.Entity;
 
         }
-
 
         public Usuario Update(Usuario newUsuario){
             var usuario =  _appContext.Usuarios.Find(newUsuario.id);
@@ -48,6 +35,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
                 usuario.apellidos = newUsuario.apellidos;
                 usuario.direccion = newUsuario.direccion;
                 usuario.telefono = newUsuario.telefono;
+                usuario.ciudad = newUsuario.ciudad;
                 //Guardar en base de datos
                  _appContext.SaveChanges();
             }

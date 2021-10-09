@@ -7,16 +7,6 @@
 <link rel="stylesheet" href="~/css/list.css" />
     <h1>Listado de Usuario</h1>
     <table class="table" style="width:50%;">
-        @* <thead>
-            <tr>
-            <th scope="col">id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Direccion</th>
-            <th scope="col">Telefono</th>
-            </tr>
-            </thead> *@
-
         @foreach (var usuario in Model.Usuario)
         {
             <td>
@@ -43,6 +33,10 @@
 
                         <div class="form-outline mb-4">
                             <label for="telefono" class="form-label"><a>Telefono: @usuario.telefono</a></label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label for="ciudad" class="form-label"><a>Ciudad: @usuario.ciudad</a></label>
                         </div>
 
                         <div class="form-outline mb-4">
