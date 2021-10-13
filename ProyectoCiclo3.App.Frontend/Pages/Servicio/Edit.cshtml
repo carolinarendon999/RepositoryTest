@@ -17,18 +17,8 @@ border-radius: 30px;">
       @* <label for="id" class="form-label">id:</label> *@
       <input type="number" class="d-none" id="id" name="id" placeholder="id" asp-for="@servicio.id">
 
-      @* <label for="origen" class="form-label">Origen:</label>
-      <input type="text" class="form-control" id="origen" name="origen" placeholder="Origen" asp-for="@servicio.origen">
- *@
       <label for="origen" class="form-label">Origen:</label>
-        <select asp-for="Servicio.origen" class="form-control" required="required">
-          <option value="">-</option>
-          @foreach (var usuario in Model.Usuarios)
-          {
-            <option value="@usuario.id">@usuario.nombre @usuario.apellidos</option>
-          }
-        </select>
-        
+      <input type="text" class="form-control" id="origen" name="origen" placeholder="Origen" asp-for="@servicio.origen">
       <label for="destino" class="form-label">Destino:</label>
       <input type="text" class="form-control" id="destino" name="destino" placeholder="Destino"
         asp-for="@servicio.destino">
